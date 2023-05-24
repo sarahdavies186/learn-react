@@ -33,6 +33,10 @@ function App() {
     setArray([]);
   }
 
+  function resetArray() {
+    setArray(INITIAL_VALUE)
+  }
+
   return (
     <>
       <button onClick={removeFirstElement}>Remove First Element</button>
@@ -45,6 +49,7 @@ function App() {
       <br />
       <button onClick={clearArray}>Clear letters</button>
       <br />
+      <button onClick={resetArray}>Reset letters</button>
       {array.join(", ")}
     </>
   );
