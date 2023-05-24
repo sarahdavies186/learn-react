@@ -11,9 +11,17 @@ function App() {
     });
   }
 
+  function removeSpecificLetter(letter) {
+   setArray((currentArray) => {
+    return currentArray.filter(element => element !== letter)
+   })
+  }
+
   return (
     <>
       <button onClick={removeFirstElement}>Remove First Element</button>
+      <br />
+      <button onClick={() => removeSpecificLetter("A")}>Remove "A"</button>
       {array.join(", ")}
     </>
   );
