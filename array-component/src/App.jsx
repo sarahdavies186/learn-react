@@ -17,11 +17,20 @@ function App() {
    })
   }
 
+  function addLetterToStart(letter) {
+    setArray((currentArray) => {
+      return [letter, ...currentArray]
+    })
+  }
+
   return (
     <>
       <button onClick={removeFirstElement}>Remove First Element</button>
       <br />
       <button onClick={() => removeSpecificLetter("A")}>Remove "A"</button>
+      <br />
+      <button onClick={() => addLetterToStart("Z")}>Add "Z" to start</button>
+      <br />
       {array.join(", ")}
     </>
   );
