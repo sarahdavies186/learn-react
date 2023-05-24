@@ -23,6 +23,12 @@ function App() {
     })
   }
 
+  function addLetterToEnd(letter) {
+    setArray((currentArray) => {
+      return [...currentArray, letter]
+    })
+  }
+
   return (
     <>
       <button onClick={removeFirstElement}>Remove First Element</button>
@@ -30,6 +36,8 @@ function App() {
       <button onClick={() => removeSpecificLetter("A")}>Remove "A"</button>
       <br />
       <button onClick={() => addLetterToStart("Z")}>Add "Z" to start</button>
+      <br />
+      <button onClick={() => addLetterToEnd("Z")}>Add "Z" to end</button>
       <br />
       {array.join(", ")}
     </>
