@@ -9,6 +9,18 @@ export function Child() {
     console.log('render')
   })
 
+  useEffect(() => {
+    console.log('Hi')
+  }, [])
+
+  useEffect(() => {
+    console.log(`My name is ${name} and I am ${age} years old.`)
+  }, [name, age])
+
+  useEffect(() => {
+    document.title = name
+  }, [name])
+
   return (
     <div>
       <input type="text" value={name} onChange={e => setName(e.target.value)} />
