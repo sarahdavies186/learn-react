@@ -26,7 +26,7 @@ function App() {
         <button type="submit">Add</button>
       </form>
       <h2>Todo List</h2>
-      <ul>
+      <ul id="list">
         {todos.map((todo) => {
           return <Todo key={todo.id} todo={todo} />;
         })}
