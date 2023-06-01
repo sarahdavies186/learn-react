@@ -12,8 +12,14 @@ function App() {
     setTodos(currentTodos => {
       return [
         ...currentTodos,
-        { id:crypto.randomUUID(), message: newTodo, completed: false }
+        { id: crypto.randomUUID(), message: newTodo, completed: false }
       ]
+    })
+  }
+
+  const deleteTodo = (todoId) => {
+    setTodos(currentTodos => {
+      return currentTodos.filter(todo => todo.id !== todoId)
     })
   }
 
@@ -28,7 +34,7 @@ function App() {
       <h2>Todo List</h2>
       <ul id="list">
         {todos.map((todo) => {
-          return <Todo key={todo.id} todo={todo} />;
+          return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />;
         })}
       </ul>
     </>
